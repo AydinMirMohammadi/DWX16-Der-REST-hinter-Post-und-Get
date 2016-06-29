@@ -1,0 +1,120 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Customer Demo Hypermedia",
+		"_postman_id": "8034c803-d63e-b45d-8743-4594853ff911",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Entry Point",
+			"request": {
+				"url": "http://private-56854-customerdemo.apiary-mock.com/",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Aggregated Root",
+			"request": {
+				"url": "http://private-56854-customerdemo.apiary-mock.com/customerapi",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "All",
+			"request": {
+				"url": "http://private-56854-customerdemo.apiary-mock.com/customerapi/queries?PageSize=30",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post new query (CSPQ)",
+			"request": {
+				"url": "http://private-56854-customerdemo.apiary-mock.com/customerapi/NewQuery",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"PageSize\": \"30\",\r\n      \"PageOffset\": \"2\",\r\n      \"SortBy\": [\r\n        \"+ZipCode\"\r\n      ],\r\n      \"Filter\": [\r\n        {\"Country\": \"DE\"}\r\n      ]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Customer 123",
+			"request": {
+				"url": "http://private-56854-customerdemo.apiary-mock.com/customerapi/customers/123",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Move customer 123",
+			"request": {
+				"url": "http://private-56854-customerdemo.apiary-mock.com/customerapi/customers/123/Move",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"Street\" : \"Blaueaue 17\",\r\n      \"City\" : \"Hamburg\",\r\n      \"Country\" : \"DE\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Customer 123 (Not Modified)",
+			"request": {
+				"url": "http://private-56854-customerdemo.apiary-mock.com/customerapi/customers/123",
+				"method": "GET",
+				"header": [
+					{
+						"key": "If-None-Match",
+						"value": "etag-hashexample",
+						"description": ""
+					},
+					{
+						"key": "Prefer",
+						"value": "status=304",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
