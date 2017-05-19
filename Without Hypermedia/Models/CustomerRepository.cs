@@ -30,11 +30,11 @@ namespace CustomerDemo.Models
             s_Customers.Add(3, new Customer
             {
                 Id = 3,
-                Name = "Philip Green",
-                Street = "Reindahl",
-                City = "Ferrol",
-                ZipCode = null,
-                Country = "PH",
+                Name = "Chelsea Elizabeth Manning",
+                Street = "Elrod Avenue",
+                City = "Quantico",
+                ZipCode = "VA22134",
+                Country = "USA",
                 //Image = Properties.Resource.gentleman,
             });
             s_Customers.Add(4, new Customer
@@ -47,7 +47,7 @@ namespace CustomerDemo.Models
                 Country = "NL",
             });
             //s_Customers[3].Image = Image.FromFile(@"..\Images\gentleman.jpg");
-            s_Customers[3].ImageFile = @"Images\gentleman.jpg";
+            s_Customers[3].ImageFile = @"Images\Manning.jpg";
         }
         public static List<Customer> GetAll()
         {

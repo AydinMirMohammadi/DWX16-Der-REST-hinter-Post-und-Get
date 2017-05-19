@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using CustomerDemo.Models;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Mvc.Formatters;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Formatters;
+//using Microsoft.AspNetCore.
 using Microsoft.Net.Http.Headers;
 
 namespace CustomerDemo.Controllers
@@ -20,7 +21,6 @@ namespace CustomerDemo.Controllers
         {
             m_HostingEnvironment = hostingEnvironment;
             SupportedMediaTypes.Add(MediaType);
-            SupportedEncodings.Add(Encoding.GetEncoding("utf-8"));
         }
 
         public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context)
@@ -33,7 +33,7 @@ namespace CustomerDemo.Controllers
                 var buf = File.ReadAllBytes(Path.Combine(m_HostingEnvironment.WebRootPath, c.ImageFile));
                 stream.Write(buf, 0, buf.Length);
             }
-            stream.Position = 0;
+            //stream.Position = 0;
             return Task.FromResult(stream);
         }
     }

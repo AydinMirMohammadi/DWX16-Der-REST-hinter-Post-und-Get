@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using CustomerDemo.Models;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerDemo.Controllers
 {
@@ -24,11 +24,11 @@ namespace CustomerDemo.Controllers
         {
             try
             {
-                return new HttpOkObjectResult(CustomerRepository.Get(id));
+                return new OkObjectResult(CustomerRepository.Get(id));
             }
             catch (KeyNotFoundException)
             {
-                return new HttpNotFoundResult();
+                return new NotFoundResult();
             }
         }
 
