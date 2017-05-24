@@ -18,12 +18,12 @@
     },
     "CustomerDemo_without_Hypermedia": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchBrowser": false,
+      "launchUrl": "api/customers",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:36758"
+      "applicationUrl": "http://localhost:36757"
     }
   }
 }
